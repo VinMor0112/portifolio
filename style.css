@@ -1,0 +1,468 @@
+:root {
+    --cor-fundo: #0d0e10;
+    --cor-botoes: #282728;
+    --cor-titulos: #f8fafa;
+    --cor-textos: #c5c6c8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-textos);
+    overflow-x: hidden;
+}
+
+/* Fundo */
+#particles {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+}
+
+/* Logo */
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+/* Nav */
+.menu {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.menu a {
+    color: var(--cor-titulos);
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #3a3a3a;
+}
+
+/* Ícones redes */
+.redes {
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+.redes img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.redes img:hover {
+    transform: scale(1.1);
+}
+
+/* Seção de apresentação */
+#apresentacao {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding-left: 15%;
+}
+
+#apresentacao h1 {
+font-size: 4rem;
+color: var(--cor-titulos);
+}
+
+#apresentacao p {
+font-size: 1.2rem;
+color: var(--cor-textos);
+margin-top: 10px;
+margin-bottom: 20px;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--cor-botoes);
+    color: var(--cor-titulos);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn-cta:hover {
+    box-shadow: 0px 0px 10px rgba(248, 250, 250, 0.6);
+}
+
+/* Seção Sobre */
+.sobre {
+    background-color: var(--cor-fundo);
+    padding: 80px 20px;
+    color: var(--cor-titulos);
+    text-align: center;
+}
+
+/* Container dos cards */
+.sobre-container {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card base */
+.card-sobre {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-sobre:hover,
+.card-sobre:focus {
+    transform: scale(1.04);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.55);
+    outline: none;
+}
+
+/* camada escura sutil para legibilidade do título */
+.card-sobre::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.5) 70%);
+    transition: background 0.3s ease;
+    pointer-events: none;
+}
+
+/* Título centralizado (único texto no card) */
+.card-title {
+    position: relative; /* acima do ::before */
+    z-index: 2;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--cor-titulos);
+    letter-spacing: 1px;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.6);
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.25);
+}
+
+/* Texto de introdução (acima do botão) */
+.sobre-intro {
+    max-width: 760px;
+    margin: 28px auto 12px;
+    color: var(--cor-textos);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Botão abaixo dos cards */
+.sobre-botao {
+    margin-top: 12px;
+}
+
+.btn-trabalhar {
+    display: inline-block;
+    background-color: var(--cor-botoes);
+    color: var(--cor-titulos);
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.5);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-trabalhar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+* Responsividade */
+@media (max-width: 980px) {
+    .card-sobre {
+        width: 280px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 680px) {
+    .sobre {
+        padding: 48px 16px;
+    }
+    .sobre-container {
+        gap: 16px;
+    }
+    .card-sobre {
+        width: 100%;
+        max-width: 420px;
+        height: 340px;
+    }
+    .sobre-intro {
+        padding: 0 12px;
+    }
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: var(--cor-fundo);
+    padding: 28px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.7);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--cor-titulos);
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #ff5e5e;
+}
+
+.modal-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.modal-text p, .modal-text ul {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--cor-textos);
+}
+
+.modal-text ul {
+    padding-left: 20px;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.modal-buttons a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.modal-buttons a:hover {
+    background: #3a3a3a;
+}
+
+.modal-buttons img {
+    width: 24px;
+    height: 24px;
+}
+
+#modal-body h2 {
+margin-bottom: 12px;
+font-size: 1.8rem;
+color: var(--cor-titulos);
+}
+
+#modal-body p {
+color: var(--cor-textos);
+line-height: 1.6;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.service-item {
+    text-align: center;
+    flex: 1;
+    max-width: 220px;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-item img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+/* Seção Contato */
+#contato {
+background-color: var(--cor-fundo);
+padding: 60px 20px;
+}
+
+.contato-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.contato-info {
+    flex: 1;
+    color: var(--cor-textos);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contato-info h2 {
+    color: var(--cor-titulos);
+    margin-bottom: 12px;
+}
+
+.contato-info h3 {
+    color: var(--cor-titulos);
+    margin-bottom: 15px;
+}
+
+.contato-info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.contato-form {
+    flex: 1;
+    background-color: var(--cor-botoes);
+    padding: 25px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato-form input,
+.contato-form textarea {
+    background-color: transparent;
+    border: 1px solid var(--cor-fundo);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--cor-titulos);
+    font-size: 1rem;
+}
+
+.contato-form input::placeholder,
+.contato-form textarea::placeholder {
+    color: var(--cor-textos);
+}
+
+.contato-form button {
+    background-color: var(--cor-botoes);
+    color: var(--cor-titulos);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.contato-form button:hover {
+    background-color: var(--cor-fundo);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 768px) {
+    .contato-container {
+        flex-direction: column;
+    }
+}
+
+.site-footer {
+    background-color: rgba(0,0,0,0.7);
+    color: var(--cor-textos);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+}

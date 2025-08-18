@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Vinicius Moreira Soares</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfólio de Vinícius Moreira Soares — Profissional de TI, Desenvolvedor Web e Suporte.">
+</head>
+<body>
+
+    <!-- Fundo animado -->
+    <canvas id="particles"></canvas>
+
+    <!-- Logo -->
+        <div class="logo">
+            <a href="#apresentacao"><img src="img/logo.png" alt="logo"></a>
+        </div>
+
+    <!-- Navegação -->
+    <nav class="menu">
+        <a href="#sobre">SOBRE</a>
+        <a href="#contato">CONTATO</a>
+    </nav>
+
+    <!-- Ícones redes -->
+    <div class="redes">
+        <a href="https://wa.me/11987860855" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/whatsapp.png" alt="WhatsApp"></a>
+        <a href="https://github.com/VinMor0112" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" alt="GitHub"></a>
+        <a href="https://linkedin.com/in/vinicius-moreira-soares-7896b8205" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/linkedin-circled--v1.png" alt="LinkedIn"></a>
+    </div>
+
+    <!-- Seção de Apresentação -->
+    <section id="apresentacao">
+        <h1>Vinícius</h1>
+        <p>Profissional de TI | Desenvolvedor web & Suporte</p>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="sobre">
+        <div class="sobre-container">
+
+            <!-- Card Serviços -->
+            <article class="card-sobre" data-modal="servicos" tabindex="0" role="button"
+             style="background-image: url('https://images.pexels.com/photos/29279566/pexels-photo-29279566/free-photo-of-cozy-coding-workspace-with-coffee-mug.jpeg');" aria-label="Abrir serviços">
+            <div class="card-title">SERVIÇOS</div>
+            </article>
+
+            <!-- Card Sobre Mim -->
+            <article class="card-sobre" data-modal="sobre-mim" tabindex="0" role="button"
+             style="background-image: url('img/foto.jpeg');" aria-label="Abrir sobre mim">
+            <div class="card-title">SOBRE MIM</div>
+            </article>
+
+            <!-- Card Projetos -->
+            <article class="card-sobre" data-modal="projetos" tabindex="0" role="button"
+             style="background-image: url('https://images.pexels.com/photos/12081657/pexels-photo-12081657.jpeg');" aria-label="Abrir projetos">
+            <div class="card-title">PROJETOS</div>
+            </article>
+
+        </div>
+            <p class="sobre-intro">Olá, eu sou o Vínicius Moreira, é uma prazer ter você em minha página.</p>
+        <div class="sobre-botao">
+            <a href="#contato" class="btn-trabalhar">Vamos trabalhar juntos!</a>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content">
+        <button class="modal-close" aria-label="Fechar modal">&times;</button>
+        <div id="modal-body">
+        <!-- Conteúdo do modal será inserido via JS -->
+        </div>
+    </div>
+    </div>
+
+    <!-- Seção de Contatos -->
+    <section id="contato">
+        <div class="contato-container">
+
+    <div class="contato-info">
+      <h2>CONTATO</h2>
+      <p>Se você chegou até aqui espero que tenha gostado, caso queira trabalhar comigo envie uma mensagem e responderei o mais rapido possivel. Desde já agradeço a preferencia!</p>
+      <h3>Telefone:</h3>
+      <p>(11) 98786-0855</p>
+      <h3>E-mail:</h3>
+      <p>soares.viniciusmoreira@gmail.com</p>
+    </div>
+
+    <!-- Formulário -->
+    <form action="https://formsubmit.co/soares.viniciusmoreira@gmail.com" method="POST" class="contato-form">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+    <input type="tel" name="telefone" placeholder="Seu telefone">
+    <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
+
+    <!-- Configurações ocultas -->
+    <input type="hidden" name="_captcha" value="false"> <!-- Desativa CAPTCHA -->
+    <input type="hidden" name="_template" value="table"> <!-- Layout de e-mail mais organizado -->
+    <input type="hidden" name="_autoresponse" value="Recebemos sua mensagem! Em breve entraremos em contato.">
+    <input type="hidden" name="_next" value="obrigado.html"> <!-- Página de agradecimento -->
+
+    <button type="submit">Enviar</button>
+
+  </div>
+    </section>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <small>© 2025 Vinícius Moreira Soares. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
