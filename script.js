@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="https://www.credly.com/users/vinicius-moreira.877c8d0f/badges#credly" target="_blank" class="btn-credly">
             <img src="https://img.icons8.com/small/64/FFFFFF/credly.png" alt="Credly"> Credly
             </a>
-            <a href="" download class="btn-curriculo">
+            <a href="assets/curriculo_vinicius.pdf" download class="btn-curriculo">
             <img src="https://img.icons8.com/ios/50/FFFFFF/google-docs.png" alt="Currículo"> Currículo
             </a>
             </div>
